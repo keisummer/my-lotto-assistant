@@ -5,6 +5,7 @@ plugins {
 }
 
 group = 'com.myassistant'
+archivesBaseName = 'my-lotto-assistant'
 version = '0.0.2'
 sourceCompatibility = '1.8'
 
