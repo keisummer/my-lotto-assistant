@@ -1,4 +1,4 @@
-package com.myassistant.lotto;
+package com.myassistant.lotto.config;
 
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
