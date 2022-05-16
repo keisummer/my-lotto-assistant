@@ -4,7 +4,8 @@ spring:
 
 server:
   tomcat:
-    relaxed-query-chars: ['<', '>', '[', '\\]', '^', '`', '{', '|', '}', '"']
+    relaxed-query-chars: '"<>[\]^`{|}'
+    relaxed-path-chars: '[]|'
 ---
 # local
 spring:
