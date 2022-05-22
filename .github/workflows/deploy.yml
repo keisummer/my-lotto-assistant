@@ -1,8 +1,10 @@
-name: my-lotto-assistant deploy
-
 on:
   push:
     branches: [ master ]
+
+name: my-lotto-assistant deploy
+env:
+  PROJECT_NAME: my-lotto-assistant
 
 jobs:
   deploy:
