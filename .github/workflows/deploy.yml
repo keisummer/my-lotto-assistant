@@ -29,7 +29,7 @@ jobs:
         shell: bash
         
       - name: Make zip file
-        run: zip -qq -r ./$GITHUB_SHA.zip .
+        run: zip -qq -r ./$PROJECT_NAME.zip .
         shell: bash
 
       - name: Configure AWS credentials
@@ -40,8 +40,8 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: Upload to S3
-        run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://my-lotto-assistant-deploy/$PROJECT_NAME/$GITHUB_SHA.zip
+        run: aws s3 cp --region ap-northeast-2 ./$PROJECT_NAME.zip s3://my-lotto-assistant-deploy/$PROJECT_NAME.zip
 
       - name: Code Deploy
-        run: aws deploy create-deployment --application-name my-lotto-assistant-deploy-app --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name my-lotto-assistant-ec2 --s3-location bucket=my-lotto-assistant-deploy,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
+        run: aws deploy create-deployment --application-name my-lotto-assistant-deploy-app --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name my-lotto-assistant-ec2 --s3-location bucket=my-lotto-assistant-deploy,bundleType=zip,key=$PROJECT_NAME.zip
 
